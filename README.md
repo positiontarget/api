@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/mtdhb/api.svg?branch=master)](https://travis-ci.com/mtdhb/api)
 [![GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
 
-https://www.mtdhb.com 服务端，需配合 [mtdhb/get](https://github.com/mtdhb/get) 使用
+服务端，需配合 [mtdhb/get](https://github.com/mtdhb/get) 使用
 
 ## Environment
 
@@ -91,14 +91,14 @@ curl -X POST http://127.0.0.1:8081/actuator/shutdown
 ```nginx
 map $http_origin $corsHost {
     default 0;
-    "~https://www.mtdhb.com" https://www.mtdhb.com;
+    "~https://你的网页域名.com" https://你的网页域名.com;
     "~http://localhost:4001" http://localhost:4001;
     "~http://127.0.0.1:4001" http://127.0.0.1:4001;
 }
 
 server {
     listen 443 ssl default_server;
-    server_name api.mtdhb.com;
+    server_name 你的API域名;
 
     add_header Access-Control-Allow-Credentials true;
     add_header Access-Control-Allow-Origin $corsHost;
